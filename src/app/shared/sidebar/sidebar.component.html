@@ -1,0 +1,28 @@
+<h2>Busquedas</h2>
+<hr>
+<ul class="list-group">
+    <li routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact:true }"
+        class="list-group-item">
+        Buscar Pais
+    </li>
+    
+    <li routerLink="region"
+        routerLinkActive="active"
+        class="list-group-item">
+        Por región
+    </li>
+
+    <li routerLink="capital"
+        routerLinkActive="active"
+        class="list-group-item">
+        Por capital
+    </li>
+</ul>
+<!--    
+        routerLink=""    Indicamos la ruta donde debería ir.
+        routerLinkActive="active"   Ponemos en azul la opcion que este activa
+        [routerLinkActiveOptions]="{ exact:true }"  Esto solo es necesario cuando el path es "", 
+                                                    sino no haría falta
+-->

@@ -1,0 +1,19 @@
+<div    *ngIf="!pais; else divPais"
+        class="alert alert-info">
+    Espere por favor...
+</div>
+
+<ng-template #divPais>
+    <div class="row">
+        <div *ngFor="let p of pais" class="col-12">
+            <h1>Pais: <small>{{ p.name.common }}</small></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let p of pais" class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="p.flags[0]" class="img-thumbnail" />
+        </div>
+    </div>
+</ng-template>

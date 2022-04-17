@@ -1,0 +1,45 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    
+    <h3>Buscar por region <small> {{regionActiva | titlecase }}</small></h3>
+    <hr>
+
+    <h5>Secciona la region</h5>
+    <div class="row">
+        <div class="col">
+
+            <!-- 1. Condicionar una clase en base a una condicion -->
+            <!-- [class.btn-primary]="regionActiva === region"
+            }" -->
+
+            <!-- 2. Condicionar una clase en base a una condicion -->
+            <!-- [ngClass]="{
+                'btn-primary': regionActiva === region,
+                'btn-outline-primary': regionActiva !== region
+            }" -->
+
+            <!-- 3. Condicionar una clase en base a una condicion -->
+            <!-- [class]=" (regionActiva === region) ? 'btn-primary' : 'btn-outline-primary' "
+            -->
+
+            <!-- 4. Condicionar una clase en base a una condicion -->
+            <!-- [class]="getClaseCSS(region)"
+                Creamos una condicion en typeScrip que haga devuelva un strin con la clase
+                que corresponde en base a una condicion
+            -->
+
+            <button *ngFor="let region of regiones"
+                [class]="getClaseCSS(region)"            
+                (click)="activarRegion( region )">
+                {{ region | titlecase }}
+            </button>
+
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>
